@@ -1,0 +1,15 @@
+** lc
+A fast and simple "line" count program inspired by FreeBSD's wc.
+
+** Why?
+FreeBSD and NetBSD's =wc= is slightly slow. Especially
+the word count feature. Both of these implementations
+don't check whether it's necessary to convert a character
+to a wide character or not. This conversion isn't cheap
+and each call for each character takes quite some time.
+
+This implementation isn't conforming to POSIX standards,
+rather it's a different implementation. For example,
+=lc= doesn't have line length feature (=-L=), mainly
+because I found it practically redundant and only in rare
+cases it's being used.
